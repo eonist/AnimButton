@@ -11,14 +11,14 @@ extension CustomButton {
       if let touch = touches.first, touch.view == self {/*touch began*/
          onTapDown()
       }
-      super.touchesBegan(touches, with:event)
+      super.touchesBegan(touches, with: event)
    }
    /**
     * On tap up inside
     */
    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
       super.touchesEnded(touches, with: event)
-      if let touch = touches.first{/*Touch ended*/
+      if let touch = touches.first {/*Touch ended*/
          //_ = touch
 //         Swift.print("touch.view:  \(touch.view)")
          if touch.view == self {
@@ -37,7 +37,7 @@ extension CustomButton {
 //         else {
 //         }
          onTapUp()/*not sure if this should fire before or after the inside and outside calls*/
-         
+
 //            - (IBAction)buttonTapped:(id)sender forEvent:(UIEvent*)event
 //         {
 //            UIView *button = (UIView *)sender;
@@ -50,9 +50,9 @@ extension CustomButton {
    /**
     * NOTE: In a tableview, this is fired if the tap starts to drag the tableview etc
     */
-   open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+   override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
       super.touchesCancelled(touches, with: event)
-      if let touch = touches.first{/*Touch ended*/
+      if let touch = touches.first {/*Touch ended*/
          _ = touch
 //         Swift.print("touchesCancelled.touch.view:  \(String(describing: touch.view))")
          onTapUp()
@@ -66,26 +66,26 @@ extension CustomButton {
    /**
     * Overridable
     */
-   @objc open func onTapUp(){
+   @objc open func onTapUp() {
       tapUpCallBack()
    }
    /**
     * Overridable
     */
-   @objc open func onTapUpInside(){
+   @objc open func onTapUpInside() {
 //      Swift.print("onTapUpInside")
       tapUpInsideCallBack()
    }
    /**
     * Overridable
     */
-   @objc open func onTapUpOutside(){
+   @objc open func onTapUpOutside() {
       tapUpOutsideCallBack()
    }
    /**
     * OVerridable
     */
-   @objc open func onTapDown(){
+   @objc open func onTapDown() {
       tapDownCallBack()
    }
 }

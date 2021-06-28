@@ -25,7 +25,7 @@ class ViewController: UIViewController {
       }
       /*1*/
       animationButton.applyAnchorAndSize { view in
-         let a = Constraint.anchor(view, to: self.view, align: .centerCenter, alignTo: .centerCenter, offset:CGPoint.init(x: 0, y: -((44/2)+22)))
+         let a = Constraint.anchor(view, to: self.view, align: .centerCenter, alignTo: .centerCenter, offset: CGPoint(x: 0, y: -((44 / 2) + 22)))
          let s = (Constraint.width(view, to: self.view, offset: -80), Constraint.height(view, height: 44))
          return (a, s)
       }
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
       /*2*/
       animationButton2.applyAnchorAndSize { view in
          let a = Constraint.anchor(view, to: animationButton, align: .topCenter, alignTo: .bottomCenter, offset: CGPoint(x: 0, y: 22))
-         let s = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width - 80, height: 44))
+         let s = Constraint.size(view, size: CGSize(width: UIScreen.main.bounds.width - 80, height: 44))
          return (a, s)
       }
    }

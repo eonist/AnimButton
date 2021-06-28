@@ -5,14 +5,14 @@ import UIKit
  * customButton.tapUpInsideCallBack = {
  *    Swift.print("🎉")
  * }
- * TODO: ⚠️️ Add onTapDownInside method
+ * - Fixme: ⚠️️  Add onTapDownInside method
  */
-open class CustomButton:UIView{
-   public var tapUpInsideCallBack:TapUpInsideCallBack = defaultTapUpInside
-   public var tapUpOutsideCallBack:TapUpOutsideCallBack = defaultTapUpOutside
-   public var tapDownCallBack:TapDownCallBack = defaultTapDown
-   public var tapUpCallBack:TapUpCallBack = defaultTapUp
-   
+open class CustomButton: UIView {
+   public var tapUpInsideCallBack: TapUpInsideCallBack = defaultTapUpInside
+   public var tapUpOutsideCallBack: TapUpOutsideCallBack = defaultTapUpOutside
+   public var tapDownCallBack: TapDownCallBack = defaultTapDown
+   public var tapUpCallBack: TapUpCallBack = defaultTapUp
+
    override init(frame: CGRect) {
       super.init(frame: frame)
       backgroundColor = .green//Debug
@@ -21,7 +21,7 @@ open class CustomButton:UIView{
    /**
     * Boilerplate
     */
-   required public init?(coder aDecoder: NSCoder) {
+   public required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }
 }
