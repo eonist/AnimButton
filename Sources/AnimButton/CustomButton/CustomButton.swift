@@ -13,11 +13,13 @@ open class CustomButton: UIView {
    public var tapUpOutsideCallBack: TapUpOutsideCallBack = defaultTapUpOutside
    public var tapDownCallBack: TapDownCallBack = defaultTapDown
    public var tapUpCallBack: TapUpCallBack = defaultTapUp
-   
+   /**
+    * - Fixme: ⚠️️ add init
+    */
    override init(frame: CGRect) {
       super.init(frame: frame)
-      backgroundColor = .green//Debug
-      isUserInteractionEnabled = true/*⚠️️ might be/not be needed ? */
+      backgroundColor = .green // Debug
+      isUserInteractionEnabled = true /*⚠️️ might be/not be needed ? */
    }
    /**
     * Boilerplate

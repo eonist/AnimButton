@@ -10,7 +10,7 @@ let package = Package(
             targets: ["AnimButton"])
     ],
     dependencies: [
-      .package(url: "https://github.com/eonist/Spatial/.git", .branch("master"))
+      .package(url: "https://github.com/eonist/Spatial.git", .branch("master"))
     ],
     targets: [
         .target(

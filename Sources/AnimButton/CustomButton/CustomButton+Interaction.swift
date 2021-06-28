@@ -37,8 +37,7 @@ extension CustomButton {
          }
          //         else {
          //         }
-         onTapUp()/*not sure if this should fire before or after the inside and outside calls*/
-         
+         onTapUp()/*not sure if this should fire before or after the inside and outside calls*/ 
          //            - (IBAction)buttonTapped:(id)sender forEvent:(UIEvent*)event
          //         {
          //            UIView *button = (UIView *)sender;
