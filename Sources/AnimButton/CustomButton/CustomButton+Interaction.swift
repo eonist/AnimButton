@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 /**
  * Override default behaviours
@@ -20,31 +21,31 @@ extension CustomButton {
       super.touchesEnded(touches, with: event)
       if let touch = touches.first {/*Touch ended*/
          //_ = touch
-//         Swift.print("touch.view:  \(touch.view)")
+         //         Swift.print("touch.view:  \(touch.view)")
          if touch.view == self {
             let touchPointInButton = touch.location(in: self)
-//            Swift.print("touchPointInButton:  \(touchPointInButton)")
-//            Swift.print("self.frame:  \(self.frame)")
-//            Swift.print("self.bounds:  \(self.bounds)")
+            //            Swift.print("touchPointInButton:  \(touchPointInButton)")
+            //            Swift.print("self.frame:  \(self.frame)")
+            //            Swift.print("self.bounds:  \(self.bounds)")
             if self.bounds.contains(touchPointInButton) {
-//               Swift.print("within")
+               //               Swift.print("within")
                onTapUpInside()
             }else {
-//               Swift.print("outside")
+               //               Swift.print("outside")
                onTapUpOutside()
             }
          }
-//         else {
-//         }
+         //         else {
+         //         }
          onTapUp()/*not sure if this should fire before or after the inside and outside calls*/
-
-//            - (IBAction)buttonTapped:(id)sender forEvent:(UIEvent*)event
-//         {
-//            UIView *button = (UIView *)sender;
-//            UITouch *touch = [[event touchesForView:button] someObject];
-//            CGPoint touchPointInButton = [touch locationInView:button];
-//            NSLog(@"Location in button: %f, %f", touchPointInButton.x, touchPointInButton.y);
-//         }
+         
+         //            - (IBAction)buttonTapped:(id)sender forEvent:(UIEvent*)event
+         //         {
+         //            UIView *button = (UIView *)sender;
+         //            UITouch *touch = [[event touchesForView:button] someObject];
+         //            CGPoint touchPointInButton = [touch locationInView:button];
+         //            NSLog(@"Location in button: %f, %f", touchPointInButton.x, touchPointInButton.y);
+         //         }
       }
    }
    /**
@@ -54,7 +55,7 @@ extension CustomButton {
       super.touchesCancelled(touches, with: event)
       if let touch = touches.first {/*Touch ended*/
          _ = touch
-//         Swift.print("touchesCancelled.touch.view:  \(String(describing: touch.view))")
+         //         Swift.print("touchesCancelled.touch.view:  \(String(describing: touch.view))")
          onTapUp()
       }
    }
@@ -73,7 +74,7 @@ extension CustomButton {
     * Overridable
     */
    @objc open func onTapUpInside() {
-//      Swift.print("onTapUpInside")
+      //      Swift.print("onTapUpInside")
       tapUpInsideCallBack()
    }
    /**
@@ -89,3 +90,4 @@ extension CustomButton {
       tapDownCallBack()
    }
 }
+#endif

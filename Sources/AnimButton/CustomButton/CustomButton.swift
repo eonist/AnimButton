@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 /**
  * let customButton:CustomButton = CustomButton.init(frame:CGRect.init(x:0,y:0,width:120,height:40))
@@ -12,7 +13,7 @@ open class CustomButton: UIView {
    public var tapUpOutsideCallBack: TapUpOutsideCallBack = defaultTapUpOutside
    public var tapDownCallBack: TapDownCallBack = defaultTapDown
    public var tapUpCallBack: TapUpCallBack = defaultTapUp
-
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       backgroundColor = .green//Debug
@@ -25,3 +26,4 @@ open class CustomButton: UIView {
       fatalError("init(coder:) has not been implemented")
    }
 }
+#endif

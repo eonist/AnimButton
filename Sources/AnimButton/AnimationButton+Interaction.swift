@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 /**
@@ -25,3 +26,4 @@ extension AnimationButton {
       }
    }
 }
+#endif

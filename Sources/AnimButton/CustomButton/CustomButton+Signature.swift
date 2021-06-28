@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 /**
  * Callback signatures
@@ -14,3 +15,4 @@ extension CustomButton {
    public static let defaultTapUp: TapUpCallBack = {}//{Swift.print("default \(CustomButton.self).onTapUp")}
    public static let defaultTapDown: TapDownCallBack = {}//{Swift.print("default \(CustomButton.self).onTapDown")}
 }
+#endif

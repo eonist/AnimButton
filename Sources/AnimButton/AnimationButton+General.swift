@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 import Spatial
 
@@ -20,3 +21,4 @@ public class BackgroundView: ConstraintView {
       self.layer.cornerRadius = self.frame.height / 2
    }
 }
+#endif

@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 import Spatial
 
@@ -41,3 +42,4 @@ extension AnimationButton {
       return label
    }
 }
+#endif

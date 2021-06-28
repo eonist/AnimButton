@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 /**
  * NOTE: This is sort of a trait protocol
@@ -5,14 +6,14 @@ import UIKit
 public protocol Receedable {}
 /**
  * Animation
- * EXAMPLE: func onTouchUpInside(){ button.grow() } func onTouchDown(){ button.shrink() };
- * NOTE: iOS 10 and up can use: let anim = UIViewPropertyAnimator.init(duration: 0.15, curve: .easeOut){}anim.startAnimation() anim.addCompletion{ _ in}
+ * ## Examples: func onTouchUpInside(){ button.grow() } func onTouchDown(){ button.shrink() };
+ * - Note: iOS 10 and up can use: let anim = UIViewPropertyAnimator.init(duration: 0.15, curve: .easeOut){}anim.startAnimation() anim.addCompletion{ _ in}
  * - Fixme: ⚠️️ Maybe add onComplete as well
  */
 extension Receedable where Self: UIView {
    /**
     * Grow the button (Animation)
-    * Parameter onChange allows other properties to be manipulated
+    * - Parameter onChange: allows other properties to be manipulated
     */
    public func grow(onChange:@escaping OnChange = {}) {
       UIView.animate(withDuration: 0.15, delay: 0.0, options: [.allowUserInteraction, .curveEaseOut]) {
@@ -22,7 +23,7 @@ extension Receedable where Self: UIView {
    }
    /**
     * Shrink the button (Animation)
-    * Parameter onChange allows other properties to be manipulated
+    * - Parameter onChange: allows other properties to be manipulated
     */
    public func shrink(onChange:@escaping OnChange = {}) {
       UIView.animate(withDuration: 0.15, delay: 0.0, options: [.allowUserInteraction, .curveEaseOut]) {
@@ -37,3 +38,4 @@ extension Receedable where Self: UIView {
 extension Receedable {
    public typealias OnChange = () -> Void
 }
+#endif

@@ -1,9 +1,9 @@
+#if os(iOS)
 import UIKit
 import Spatial
-
 /**
- * - Fixme: ⚠️️  Might be better to use UIButton, see this to access bg layer: https://stackoverflow.com/questions/26351759/why-does-my-uibuttons-background-layer-animate-in-and-how-can-i-stop-it
- * - Fixme: ⚠️️  You could also scale down via .transform (test this when you have time) ref: https://medium.com/livefront/animating-font-size-in-uilabels-fb6fd273a5f3
+ * - Fixme: ⚠️️ Might be better to use UIButton, see this to access bg layer: https://stackoverflow.com/questions/26351759/why-does-my-uibuttons-background-layer-animate-in-and-how-can-i-stop-it
+ * - Fixme: ⚠️️ You could also scale down via .transform (test this when you have time) ref: https://medium.com/livefront/animating-font-size-in-uilabels-fb6fd273a5f3
  */
 open class AnimationButton: CustomButton, ConstraintKind, Receedable {
    /*Constraints*/
@@ -13,9 +13,12 @@ open class AnimationButton: CustomButton, ConstraintKind, Receedable {
    public lazy var backgroundView: BackgroundView = createBackgroundView()
    public lazy var textLabel: UILabel = createTextLabel()
    /*Style*/
-   internal var style: Style/*backgroundColor,borderColor,textColor*/
+   internal var style: Style/*backgroundColor, borderColor, textColor*/
    /*Text*/
    internal var text: String
+   /**
+    * - Fixme: ⚠️️ add doc
+    */
    public init(style: Style = AnimationButton.defaultStyle, text: String = "Dummy text", frame: CGRect = .zero) {
       self.style = style
       self.text = text
@@ -32,3 +35,4 @@ open class AnimationButton: CustomButton, ConstraintKind, Receedable {
       fatalError("init(coder:) has not been implemented")
    }
 }
+#endif
